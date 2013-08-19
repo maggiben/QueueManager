@@ -3,6 +3,20 @@ QueueManager
 
 With this module you can process and manage operations on large queues of items or elements.
 
+## Summary:
+| Function | Description |
+| ----- | ----- |
+| queueManager | Create a new queue. |
+| queueObj.add | Add a single item onto the queue. |
+| queueObj.addEach | Add multiple items onto the queue, individually. |
+| queueObj.start | Start a currently paused queue. |
+| queueObj.next | Intended to be called from within the queueManager.each() callback, this method will continue a queue with a delay of -1. |
+| queueObj.clear | Clear a queue completely. |
+| queueObj.pause | Pause a currently running queue. |
+| queueObj.update | Update an existing queue’s options. |
+| queueObj.size | Get the current queue length. |
+| queueObj.indexOf | Get the current index in the queue of the passed item. |
+
 ## Installation Bower:
 <!---->
 
@@ -155,6 +169,39 @@ queueObj.indexOf( item );
 
 #### Returns:
 * (Number) The index of the passed item in the queue.  Returns -1 if not found.
+
+## queueManager.each()
+
+A generic iterator function.
+
+#### Usage:
+```js
+queueObj.each(function(item){
+	// TODO Add Item processing code here
+});
+```
+#### Arguments:
+* function (Function) The function that will be executed on every object. This function is passed a single argument, which is the single queue item if batch is 1, or an array of queue items if batch is > 1.  If callback returns true, the queue item(s) will be re- added back onto the front of the queue for the next callback execution to retry.  Inside this function, `this` refers to the queueObj object.
+
+#### Returns:
+* (Object) Reference to self.
+
+## queueManager.complete()
+
+Called whenever there are no longer any queue items to process.
+
+#### Usage:
+```js
+queueObj.complete(function(){
+	// TODO Add final processing code here
+});
+```
+#### Arguments:
+* function (Function) Called whenever there are no longer any queue items to process.  After completion, if more queue items are added and the queue completes again, this function will be called again.  Inside this function, `this` refers to the queueObj object.
+
+#### Returns:
+* (Object) Reference to self.
+
 
 ## Basic usage auto executing:
 ```js
