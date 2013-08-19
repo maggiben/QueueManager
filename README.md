@@ -210,3 +210,4 @@ queue.start();
 See the LICENSES.md file for copies of the referenced licenses.
 
 1. jQuery message queuing by "Cowboy" Ben Alman from <http://benalman.com/projects/jquery-message-queuing-plugin/> and are available under dual licenses the MIT and GPL licenses. http://benalman.com/about/license/
+2. Node extend <https://github.com/justmoon/node-extend> Ported by Stefan Thomas with contributions by Jonathan Buchanan. MIT license.
