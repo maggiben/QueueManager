@@ -76,7 +76,7 @@
         define(['jquery', 'debug'], factory);
     } else {
         // Browser globals (root is window)
-        root.QueueManager = factory(root.jquery, root.debug);
+        root.QueueManager = factory(root.$, root.debug);
 }
 }(this, function (jquery, debug) {
     "use strict";
