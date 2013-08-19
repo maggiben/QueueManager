@@ -11,9 +11,9 @@ queue.each(function(item){
     this.next();
 })
 .pause()
-.add("pirulo")
-.add("stuff")
-.add('things')
+.add("foo")
+.add("bar")
+.add('baz')
 .complete(function(){
     console.log("all tasks done");
 })
