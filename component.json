@@ -1,0 +1,28 @@
+{
+    "name": "QueueManager",
+    "description": "Queue manager",
+    "version": "1.0.0",
+    "keywords": [
+        "queue",
+        "manager"
+    ],
+    "author": {
+        "name": "Benjamin Maggi",
+        "email": "benjaminmaggi@gmail.com",
+        "url": "http://github.com/maggiben"
+    },
+    "directories": {
+        "doc": "docs",
+        "test": "tests"
+    },
+    "dependencies": {
+        "jquery": "latest"
+    },
+    "main": "QueueManager.js",
+    "license": "MIT",
+    "readmeFilename": "README.md",
+    "devDependencies": {
+        "mocha": "*",
+        "chai": "*",
+    }
+}
