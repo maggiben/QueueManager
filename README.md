@@ -3,6 +3,13 @@ QueueManager
 
 With this module you can process and manage operations on large queues of items or elements.
 
+## Installation Bower:
+<!---->
+
+    bower install queueManager --save.
+
+> For more installation details please see [Bower](http://bower.io/)
+
 ## queueManager()
 
 #### Usage:
