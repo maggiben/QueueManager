@@ -10,15 +10,25 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-        <link rel="stylesheet" href="../app/bower_components/mocha/mocha.css">
-        <script src="../app/bower_components/mocha/mocha.js"></script>
-        <script src="../app/bower_components/chai/chai.js"></script>
-
+        <link rel="stylesheet" href="../bower_components/mocha/mocha.css">
+        <script src="../bower_components/jquery/jquery.js"></script>
+        <script src="../bower_components/mocha/mocha.js"></script>
+        <script src="../bower_components/chai/chai.js"></script>
+        <script src="../QueueManager.js"></script>
+        
+        <script>
+            onload = function() {
+                if (window.mochaPhantomJS) {
+                    mochaPhantomJS.run();
+                } else {
+                    mocha.run();
+                }
+            }
+        </script>
     </head>
     <body>
         <div class="container"></div>
         <div id="mocha" style="opacity: 0.85;"></div>
-
         <script>
             mocha.setup(
                 {
@@ -27,8 +37,10 @@
                     ignoreLeaks: true
                 }
             );
-            var should = chai.should();
+            var assert = chai.assert,
+                expect = chai.expect,
+                should = chai.should(); // Note that should has to be executed
         </script>
-    <script data-main="spec/config.js" src="../app/bower_components/requirejs/require.js"></script>
+        <script src="./test.js"></script>
     </body>
 </html>
