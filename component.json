@@ -23,6 +23,6 @@
     "readmeFilename": "README.md",
     "devDependencies": {
         "mocha": "*",
-        "chai": "*",
+        "chai": "*"
     }
 }
