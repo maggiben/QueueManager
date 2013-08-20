@@ -20,7 +20,7 @@ With this module you can process and manage operations on large queues of items 
 ## Installation Bower:
 <!---->
 
-    bower install queueManager --save.
+    bower install queueManager --save
 
 > For more installation details please see [Bower](http://bower.io/)
 
