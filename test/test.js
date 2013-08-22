@@ -2,6 +2,7 @@ var assert = chai.assert,
     expect = chai.expect,
     should = chai.should(); // Note that should has to be executed
 
+/*
 describe('QueueManager', function () {
     it('QueueManager exist', function() {
         should.exist(QueueManager);
@@ -43,7 +44,7 @@ describe('QueueManager', function () {
         })
         .start();
     });
-    describe("Should sum all numbers in a queue [1, 2, 3]", function(){  
+    describe("Should sum all numbers in a queue [1, 2, 3]", function(){
         var total = 0;
         var queue = new QueueManager({delay: 1});
         queue.each(function(item){
@@ -61,8 +62,27 @@ describe('QueueManager', function () {
                 done();
             });
         });
-        it("total should be 6", function(){    
+        it("total should be 6", function(){
             expect(total).to.equal(6);
         });
+    });
+});*/
+
+describe("Should ilterate over the queue using next()", function(){
+    var total = 0;
+    var queue = new QueueManager({delay: -1, paused: true, queue: [1,2,3]});
+    queue.each(function(item){
+        total += item;
+        console.log(item)
+        this.next();
+    })
+    .complete(function(){
+        console.log("total: " + total)
+    })
+    .start();
+
+
+    it("total should be 6", function(){
+        expect(total).to.equal(6);
     });
 });
